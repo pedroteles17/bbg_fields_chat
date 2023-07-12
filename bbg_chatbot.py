@@ -33,8 +33,18 @@ docs = text_splitter.split_documents(documents)
 # Create embeddings using OpenAI and FAISS
 embeddings = OpenAIEmbeddings()
 
-db = FAISS.from_documents(docs, embeddings)
+#db = FAISS.from_documents(docs, embeddings)
 
 db.save_local("faiss_index")
 
 #%%
+from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
+from langchain.vectorstores import Chroma
+
+# create the open-source embedding function
+embedding_function = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+
+# load it into Chroma
+chroma_db = Chroma.from_documents(docs, embedding_function, persist_directory="./chroma_db")
+chroma_db.persist()
+# %%
