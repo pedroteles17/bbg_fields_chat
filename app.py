@@ -1,9 +1,6 @@
 import streamlit as st
 from rag_module import VectorDB, QueryEngine
 
-from dotenv import load_dotenv
-load_dotenv()
-
 with st.sidebar:
     "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
 
