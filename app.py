@@ -1,3 +1,8 @@
+# Chroma has a dependency problem with older version of sqlite3
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 import streamlit as st
 from rag_module import VectorDB, QueryEngine
 
