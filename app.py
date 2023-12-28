@@ -7,7 +7,7 @@ import streamlit as st
 from rag_module import VectorDB, QueryEngine
 
 with st.sidebar:
-    "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
+    "[View the source code](https://github.com/pedroteles17/bbg_fields_chat)"
 
 st.title("Non-Official Bloomberg FLDS Navigator 🌐💹")
 st.caption("RAG System for Efficient Bloomberg Field Analysis")
